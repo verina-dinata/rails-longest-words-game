@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Result</h1>
+  <% if @result[:message] == 'not in the grid' %>
+    <p>Sorry but <strong><%= @word.upcase %></strong> can't be built out of <%= @letters.gsub(/[^(\w,\s)]/, "")  %></p>
+  <% elsif @result[:message] == 'not an english word' %>
+    <p>Sorry but <strong><%= @word.upcase %></strong> does not seem to be a valid English word...</p>
+  <% else %>
+    <p><strong>Congratulations!</strong> <%= @word.upcase %> is a valid English word!</p>
+  <% end %>
+  <%=  link_to "Play again", new_path%>
+</div>
